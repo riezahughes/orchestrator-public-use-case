@@ -18,6 +18,10 @@ jobs:
             ${{ runner.os }}-
 
       - name: npm install and orchestrator start
+        if: steps.cache.outputs.cache-hit != 'true'
         run: |
           npm install
+
+      - name: orchestrator start
+        run: |
           npx orchestrator --config orchestrator.json
