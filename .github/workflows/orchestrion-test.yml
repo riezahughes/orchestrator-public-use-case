@@ -8,6 +8,5 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Installing npm nad running
-        run: |
-          npm install
-          npx orchestrator --config orchestrator.json
+        run: npm install
+        run: npx orchestrator --config orchestrator.json
