@@ -4,5 +4,9 @@ jobs:
   Orchestrion-Cypress-Tests:
     runs-on: ubuntu-latest
     steps:
-      - run: npm install
-      - run: npx orchestrator --config orchestrator.json
+      - name: Checking out code
+        uses: actions/checkout@v2
+
+      - name: Installing npm nad running
+        run: npm install
+        run: npx orchestrator --config orchestrator.json
